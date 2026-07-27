@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand palette — Chitra Printers */
+  --maroon: #831618;
+  --maroon-dark: #5e0f10;
+  --yellow: #f2cd21;
+  --orange: #f8a51b;
+  --paper: #fdfdf6;
+  --ink: #221a12;
+}
+
+/* Wires the tokens above (and the next/font variables set on <html>)
+   into Tailwind v4's theme, so utilities like bg-maroon, text-yellow,
+   font-display etc. become available if you want them later. */
+@theme {
+  --color-maroon: var(--maroon);
+  --color-maroon-dark: var(--maroon-dark);
+  --color-yellow: var(--yellow);
+  --color-orange: var(--orange);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body), sans-serif;
+}
+
+/* Font utility classes — variables come from next/font in layout.tsx */
+.font-display {
+  font-family: var(--font-display), sans-serif;
+  letter-spacing: 0.01em;
+}
+.font-body {
+  font-family: var(--font-body), sans-serif;
+}
+.font-mono {
+  font-family: var(--font-mono), monospace;
+}
+
+/* Halftone dot texture — a nod to how print actually reproduces color */
+.halftone {
+  background-image: radial-gradient(circle, var(--maroon) 1px, transparent 1.4px);
+  background-size: 10px 10px;
+}
+
+/* Dashed "perforation" edge, echoing a tear-off ticket/receipt */
+.ticket-edge {
+  position: relative;
+}
+.ticket-edge::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1px;
+  height: 1px;
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--maroon) 0 8px,
+    transparent 8px 16px
+  );
+  opacity: 0.35;
+}
+
+/* Marquee for the client logo strip */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}
