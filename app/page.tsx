@@ -36,8 +36,6 @@ export default function Home() {
 
 /* ------------------------- shared bits ------------------------- */
 
-// The printer's registration mark — a crosshair inside a circle, used
-// to align color plates on a press. This is the page's signature motif.
 function RegMark({ className = "", size = 22, style = {} }) {
   return (
     <svg
@@ -85,16 +83,12 @@ function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-14 items-center">
           {/* Text column */}
           <div>
-            <div
-              className="inline-flex items-center gap-2 font-mono text-xs px-3 py-1.5 rounded-sm border"
-              style={{ borderColor: "var(--maroon)", color: "var(--maroon)" }}
-            >
-              <RegMark size={12} />
-              JOB No. 0001 &nbsp;·&nbsp; ESTD. 30+ YEARS
-            </div>
+            <p className="font-body font-bold text-sm tracking-widest uppercase mb-4" style={{ color: "var(--orange)" }}>
+              Established 30+ Years
+            </p>
 
             <h1
-              className="font-display uppercase text-5xl lg:text-6xl leading-[1.05] mt-6"
+              className="font-display uppercase text-5xl lg:text-6xl leading-[1.05]"
               style={{ color: "var(--maroon)" }}
             >
               Every print
@@ -128,10 +122,10 @@ function HeroSection() {
               </Link>
             </div>
 
-            <div className="flex items-center gap-2 mt-8 font-mono text-sm text-[#6b5f4f]">
+            {/* <div className="flex items-center gap-2 mt-8 font-mono text-sm text-[#6b5f4f]">
               <Phone size={16} />
               9767742598 · 9226128947 · 9529827308
-            </div>
+            </div> */}
           </div>
 
           {/* Image column, framed like a proof sheet */}
@@ -140,8 +134,9 @@ function HeroSection() {
               className="relative h-[420px] lg:h-[540px] w-full rounded-sm overflow-hidden border-[6px]"
               style={{ borderColor: "var(--maroon)" }}
             >
+              {/* Indian Printing Press/Paper context */}
               <img
-                src="https://images.unsplash.com/photo-1629904853716-f0bc54eea481?q=80&w=2070&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1551280327-14227f4284b3?q=80&w=2070&auto=format&fit=crop"
                 alt="Industrial printing press"
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -210,20 +205,32 @@ function ClientStrip() {
         borderBottom: "1px solid rgba(255,255,255,0.15)",
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 mb-5">
-        <p className="text-center font-mono text-xs tracking-widest uppercase text-orange-100">
+      <div className="max-w-7xl mx-auto px-6 mb-6">
+        <p className="text-center font-display text-xl text-white/90">
           Trusted by 400+ customers across industries, including
         </p>
       </div>
-      <div className="flex w-[200%] animate-marquee gap-16 items-center">
+      <div className="flex w-[200%] animate-marquee gap-8 items-center pl-8">
         {[...clients, ...clients].map((client, i) => (
-          <span
-            key={i}
-            className="font-display uppercase text-xl md:text-2xl whitespace-nowrap"
-            style={{ color: "var(--yellow)", opacity: 0.85 }}
+          <div 
+            key={i} 
+            className="flex-shrink-0 w-44 h-20 bg-white/10 rounded-lg flex items-center justify-center p-4 border border-white/20 relative"
           >
-            {client}
-          </span>
+            {/* 
+              When you are ready, uncomment the img tag below and add your image path.
+              Example: src={`/assets/${client.toLowerCase().replace(/ /g, '-')}-logo.png`}
+            */}
+            
+            {/* <img
+              src=""
+              alt={`${client} Logo`}
+              className="max-h-full max-w-full object-contain opacity-80"
+            /> */}
+            
+            <span className="absolute text-xs text-white/60 font-mono text-center px-2 pointer-events-none">
+              {client} Logo
+            </span>
+          </div>
         ))}
       </div>
     </section>
@@ -238,29 +245,34 @@ function ServicesGrid() {
       title: "Corporate Stationery",
       desc: "Table calendars, diaries, letterheads, visiting cards and ID cards.",
       Icon: CalendarDays,
+      img: "https://images.unsplash.com/photo-1616628182504-30a5f0e8c53c?q=80&w=1000&auto=format&fit=crop"
     },
     {
       title: "Industrial & Medical",
       desc: "CT scan bags, hospital files, and operation & maintenance manuals.",
       Icon: HeartPulse,
+      img: "https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=1000&auto=format&fit=crop"
     },
     {
       title: "Signage & Branding",
       desc: "Standees, vinyl boards, vinyl stickers, and reception signage.",
       Icon: Signpost,
+      img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1000&auto=format&fit=crop"
     },
     {
       title: "Premium Publishing",
       desc: "Silver jubilee souvenirs, brochures, and wedding invitation cards.",
       Icon: BookOpenText,
+      img: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1000&auto=format&fit=crop"
     },
   ];
 
   return (
     <section className="py-24 max-w-7xl mx-auto px-6 lg:px-8">
       <div className="max-w-2xl mb-16">
+        {/* Updated Font Size and Style for "What we produce" */}
         <p
-          className="font-mono text-xs uppercase tracking-widest mb-3"
+          className="font-display text-2xl lg:text-3xl mb-4"
           style={{ color: "var(--orange)" }}
         >
           What we produce
@@ -278,31 +290,44 @@ function ServicesGrid() {
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {services.map(({ title, desc, Icon }, idx) => (
+        {services.map(({ title, desc, Icon, img }, idx) => (
           <div
             key={idx}
-            className="ticket-edge relative bg-white p-7 pt-8 rounded-sm shadow-sm hover:shadow-md transition-shadow group"
+            className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 group min-h-[340px] flex flex-col p-8 border-b-4 border-transparent hover:border-[var(--yellow)]"
           >
-            <RegMark
-              size={14}
-              className="absolute top-3 right-3 opacity-25"
-              style={{ color: "var(--maroon)" }}
+            {/* Background Image */}
+            <img 
+              src={img} 
+              alt={title} 
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
             />
-            <div
-              className="w-12 h-12 rounded-full flex items-center justify-center mb-6 transition-colors"
-              style={{ background: "#fdf1d6" }}
-            >
-              <Icon size={22} style={{ color: "var(--maroon)" }} />
+            
+            {/* Dark Gradient Overlay for Perfect Text Visibility */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/30 opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
+
+            {/* Content Container (z-10 keeps it above the image and overlay) */}
+            <div className="relative z-10 flex flex-col h-full">
+              
+              {/* Glassmorphism Icon Box */}
+              <div
+                className="w-14 h-14 rounded-xl flex items-center justify-center mb-auto backdrop-blur-md bg-white/10 border border-white/20 shadow-inner transition-transform duration-500 group-hover:scale-110 group-hover:bg-[var(--yellow)]/20 group-hover:border-[var(--yellow)]/50"
+              >
+                <Icon size={26} className="text-white group-hover:text-[var(--yellow)] transition-colors duration-300" />
+              </div>
+
+              {/* Text Blocks */}
+              <div className="mt-8 transform transition-transform duration-300 translate-y-2 group-hover:translate-y-0">
+                <h3
+                  className="font-display uppercase text-2xl mb-3 text-white group-hover:text-[var(--yellow)] transition-colors duration-300"
+                >
+                  {title}
+                </h3>
+                <p className="font-body text-white/80 text-sm leading-relaxed">
+                  {desc}
+                </p>
+              </div>
+
             </div>
-            <h3
-              className="font-display uppercase text-lg mb-2"
-              style={{ color: "var(--maroon)" }}
-            >
-              {title}
-            </h3>
-            <p className="font-body text-sm leading-relaxed text-[#5c5245]">
-              {desc}
-            </p>
           </div>
         ))}
       </div>
@@ -319,37 +344,37 @@ function IndustriesTabs() {
     {
       name: "Government",
       Icon: Landmark,
-      img: "https://images.unsplash.com/photo-1555849467-4e51086053f3?q=80&w=2070&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1587474260584-136574528ed5?q=80&w=2070&auto=format&fit=crop", 
       desc: "Serving Central, State & Corporation offices with secure, reliable documentation printing.",
     },
     {
       name: "Hospitals",
       Icon: HeartPulse,
-      img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1582750433449-648ed127f09e?q=80&w=2070&auto=format&fit=crop", 
       desc: "Patient files, CT scan bags, and diagnostic reports designed for daily clinical use.",
     },
     {
       name: "Education",
       Icon: GraduationCap,
-      img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop", 
       desc: "School calendars, student ID cards, diaries, and college souvenirs.",
     },
     {
       name: "Industrial",
       Icon: Factory,
-      img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1635405074683-96d6921a2a68?q=80&w=2069&auto=format&fit=crop", 
       desc: "Operation manuals, safety vinyl boards, and tooling documentation for manufacturing.",
     },
     {
       name: "Hotels",
       Icon: Hotel,
-      img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=2070&auto=format&fit=crop", 
       desc: "Menus, standees, and guest collateral finished to a hospitality-grade standard.",
     },
     {
       name: "Transport",
       Icon: Truck,
-      img: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1585565804112-f201f68c48b4?q=80&w=2070&auto=format&fit=crop", 
       desc: "Fleet signage, bill books, and logistics documentation built for the road.",
     },
   ];
@@ -360,7 +385,7 @@ function IndustriesTabs() {
     <section className="py-24" style={{ background: "var(--maroon)" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <p
-          className="font-mono text-xs uppercase tracking-widest mb-3 text-center"
+          className="font-display text-2xl lg:text-3xl mb-4 text-center"
           style={{ color: "var(--yellow)" }}
         >
           Ten industries, one press
