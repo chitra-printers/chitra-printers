@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image"; // Importing Next.js highly optimized Image component
 import {
   ArrowUpRight,
   Presentation,
@@ -153,7 +154,15 @@ export default function ServicesPage() {
       <section className="py-20 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12">
           {categories.map(({ title, Icon, desc, images, stack, contain }, idx) => (
-            <div key={idx} className="flex flex-col bg-white rounded-3xl overflow-hidden shadow-lg border transition-shadow duration-200 hover:shadow-2xl" style={{ borderColor: "rgba(131,22,24,0.08)" }}>
+            <div 
+              key={idx} 
+              className="flex flex-col bg-white rounded-3xl overflow-hidden shadow-lg border transition-shadow duration-200 hover:shadow-2xl" 
+              style={{ 
+                borderColor: "rgba(131,22,24,0.08)",
+                contentVisibility: "auto",      // SKIPS rendering if off-screen (Massive performance boost)
+                containIntrinsicSize: "700px"   // Prevents scrollbar from jumping while scrolling
+              }}
+            >
               <div className="w-full p-6" style={{ background: "linear-gradient(180deg, #f8f5ef, #f1ece2)" }}>
                 <Gallery images={images} title={title} onSelect={setSelectedImg} stack={stack} contain={contain} />
               </div>
@@ -172,7 +181,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* CTA — matched to "Simple Steps" section color */}
+      {/* CTA */}
       <section className="py-24" style={{ background: "#fdf1d6" }}>
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="font-display uppercase text-4xl lg:text-5xl mb-8 tracking-tight" style={{ color: "var(--maroon)" }}>Ready to print with us?</h2>
@@ -194,6 +203,8 @@ const GRID_CONFIG: Record<number, { cols: string; aspect: string }> = {
   2: { cols: "grid-cols-2", aspect: "aspect-[4/3]" },
   3: { cols: "grid-cols-3", aspect: "aspect-square" },
   4: { cols: "grid-cols-2", aspect: "aspect-square" },
+  5: { cols: "grid-cols-3", aspect: "aspect-square" },
+  6: { cols: "grid-cols-3", aspect: "aspect-square" },
 };
 const DEFAULT_CONFIG = { cols: "grid-cols-3", aspect: "aspect-square" };
 
@@ -243,21 +254,26 @@ function ImageTile({
 }) {
   return (
     <div
-      className={`relative overflow-hidden rounded-2xl cursor-pointer border-2 group transition-shadow duration-200 shadow-sm hover:shadow-lg [border-color:rgba(131,22,24,0.08)] hover:[border-color:var(--yellow)] ${className}`}
+      className={`relative overflow-hidden rounded-2xl cursor-pointer border-2 group transition-shadow duration-300 shadow-sm hover:shadow-lg [border-color:rgba(131,22,24,0.08)] hover:[border-color:var(--yellow)] ${className}`}
       style={{ background: contain ? "#fff" : undefined }}
       onClick={onClick}
     >
-      <img
+      {/* 
+        Swapped to next/image.
+        This forces Next.js to auto-scale the resolution, killing VRAM issues. 
+      */}
+      <Image
         src={src}
         alt={alt}
-        loading="lazy"
-        className={`absolute inset-0 w-full h-full ${contain ? "object-contain p-2" : "object-cover"} transition-transform duration-300 group-hover:scale-105`}
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        className={`${contain ? "object-contain p-2" : "object-cover"} transition-transform duration-500 ease-out group-hover:scale-105`}
       />
       <div
-        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center z-10"
+        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out flex items-center justify-center z-10 pointer-events-none"
         style={{ background: contain ? "rgba(131,22,24,0.06)" : "linear-gradient(180deg, rgba(131,22,24,0.15), rgba(131,22,24,0.55))" }}
       >
-        <div className="w-11 h-11 rounded-full flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform duration-200" style={{ background: "var(--yellow)" }}>
+        <div className="w-11 h-11 rounded-full flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform duration-300 ease-out" style={{ background: "var(--yellow)" }}>
           <Printer size={20} style={{ color: "var(--maroon)" }} />
         </div>
       </div>

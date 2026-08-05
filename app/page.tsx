@@ -121,11 +121,6 @@ function HeroSection() {
                 Explore Services
               </Link>
             </div>
-
-            {/* <div className="flex items-center gap-2 mt-8 font-mono text-sm text-[#6b5f4f]">
-              <Phone size={16} />
-              9767742598 · 9226128947 · 9529827308
-            </div> */}
           </div>
 
           {/* Image column, framed like a proof sheet */}
@@ -134,9 +129,8 @@ function HeroSection() {
               className="relative h-[420px] lg:h-[540px] w-full rounded-sm overflow-hidden border-[6px]"
               style={{ borderColor: "var(--maroon)" }}
             >
-              {/* Indian Printing Press/Paper context */}
               <img
-                src="https://images.unsplash.com/photo-1551280327-14227f4284b3?q=80&w=2070&auto=format&fit=crop"
+                src="/assets/printing.avif"
                 alt="Industrial printing press"
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -158,9 +152,9 @@ function HeroSection() {
               <CornerMarks color="var(--yellow)" />
             </div>
 
-            {/* Stamp badge */}
+            {/* Stamp badge - Shifted to the right */}
             <div
-              className="absolute -bottom-6 -left-6 hidden md:flex items-center justify-center w-28 h-28 rounded-full font-display text-center text-sm rotate-[-8deg] shadow-lg"
+              className="absolute -bottom-6 -right-6 hidden md:flex items-center justify-center w-28 h-28 rounded-full font-display text-center text-sm rotate-[8deg] shadow-lg"
               style={{ background: "var(--yellow)", color: "var(--maroon)" }}
             >
               QUALITY
@@ -183,55 +177,51 @@ function HeroSection() {
 /* ------------------------ 2. CLIENT STRIP ------------------------ */
 
 function ClientStrip() {
-  const clients = [
-    "TATA",
-    "THERMAX",
-    "SANDVIK",
-    "FINOLEX",
-    "BANK OF MAHARASHTRA",
-    "MSME",
-    "ASIAN ENGINEERING GROUP",
-    "KALYAN JEWELLERS",
-    "BOBCAT",
-    "UNION BANK OF INDIA",
-  ];
+  const totalLogos = 19;
+  const logos = Array.from({ length: totalLogos }, (_, i) => i + 1);
 
   return (
     <section
-      className="py-10 overflow-hidden relative"
+      className="py-12 overflow-hidden relative shadow-inner"
       style={{
         background: "var(--maroon)",
         borderTop: "1px solid rgba(255,255,255,0.15)",
         borderBottom: "1px solid rgba(255,255,255,0.15)",
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 mb-6">
-        <p className="text-center font-display text-xl text-white/90">
+      <div className="max-w-7xl mx-auto px-6 mb-8">
+        <p className="text-center font-display text-2xl lg:text-3xl text-white">
           Trusted by 400+ customers across industries, including
         </p>
       </div>
       <div className="flex w-[200%] animate-marquee gap-8 items-center pl-8">
-        {[...clients, ...clients].map((client, i) => (
-          <div 
-            key={i} 
-            className="flex-shrink-0 w-44 h-20 bg-white/10 rounded-lg flex items-center justify-center p-4 border border-white/20 relative"
-          >
-            {/* 
-              When you are ready, uncomment the img tag below and add your image path.
-              Example: src={`/assets/${client.toLowerCase().replace(/ /g, '-')}-logo.png`}
-            */}
-            
-            {/* <img
-              src=""
-              alt={`${client} Logo`}
-              className="max-h-full max-w-full object-contain opacity-80"
-            /> */}
-            
-            <span className="absolute text-xs text-white/60 font-mono text-center px-2 pointer-events-none">
-              {client} Logo
-            </span>
-          </div>
-        ))}
+        {[...logos, ...logos].map((num, i) => {
+          const formattedNum = String(num).padStart(2, '0');
+          
+          return (
+            <div 
+              key={i} 
+              className="flex-shrink-0 w-64 h-32 bg-white rounded-xl flex items-center justify-center p-5 shadow-lg border-2 border-transparent hover:border-[var(--yellow)] hover:scale-105 transition-all duration-300 relative group"
+            >
+              <img
+                src={`/assets/logo_${formattedNum}.png`}
+                alt={`Client Logo ${formattedNum}`}
+                className="max-h-full max-w-full object-contain"
+                loading="lazy"
+              />
+            </div>
+          );
+        })}
+      </div>
+      
+      {/* Know More Trigger */}
+      <div className="max-w-7xl mx-auto px-6 mt-10 text-center relative z-10">
+        <Link
+          href="/about"
+          className="inline-flex items-center gap-2 font-body font-semibold text-white/90 hover:text-[var(--yellow)] transition-colors border-b border-dashed border-white/40 hover:border-[var(--yellow)] pb-1"
+        >
+          Know more about us <ArrowUpRight size={16} />
+        </Link>
       </div>
     </section>
   );
@@ -245,32 +235,31 @@ function ServicesGrid() {
       title: "Corporate Stationery",
       desc: "Table calendars, diaries, letterheads, visiting cards and ID cards.",
       Icon: CalendarDays,
-      img: "https://images.unsplash.com/photo-1616628182504-30a5f0e8c53c?q=80&w=1000&auto=format&fit=crop"
+      img: "/assets/tc_2.webp"
     },
     {
       title: "Industrial & Medical",
       desc: "CT scan bags, hospital files, and operation & maintenance manuals.",
       Icon: HeartPulse,
-      img: "https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=1000&auto=format&fit=crop"
+      img: "/assets/ct_2.webp"
     },
     {
       title: "Signage & Branding",
       desc: "Standees, vinyl boards, vinyl stickers, and reception signage.",
       Icon: Signpost,
-      img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1000&auto=format&fit=crop"
+      img: "/assets/standee -2.webp"
     },
     {
       title: "Premium Publishing",
       desc: "Silver jubilee souvenirs, brochures, and wedding invitation cards.",
       Icon: BookOpenText,
-      img: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1000&auto=format&fit=crop"
+      img: "/assets/sr_1.webp"
     },
   ];
 
   return (
     <section className="py-24 max-w-7xl mx-auto px-6 lg:px-8">
       <div className="max-w-2xl mb-16">
-        {/* Updated Font Size and Style for "What we produce" */}
         <p
           className="font-display text-2xl lg:text-3xl mb-4"
           style={{ color: "var(--orange)" }}
@@ -344,19 +333,19 @@ function IndustriesTabs() {
     {
       name: "Government",
       Icon: Landmark,
-      img: "https://images.unsplash.com/photo-1587474260584-136574528ed5?q=80&w=2070&auto=format&fit=crop", 
+      img: "/assets/govt.jpg", 
       desc: "Serving Central, State & Corporation offices with secure, reliable documentation printing.",
     },
     {
       name: "Hospitals",
       Icon: HeartPulse,
-      img: "https://images.unsplash.com/photo-1582750433449-648ed127f09e?q=80&w=2070&auto=format&fit=crop", 
+      img: "/assets/hospital.webp", 
       desc: "Patient files, CT scan bags, and diagnostic reports designed for daily clinical use.",
     },
     {
       name: "Education",
       Icon: GraduationCap,
-      img: "https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop", 
+      img: "/assets/school.jpg", 
       desc: "School calendars, student ID cards, diaries, and college souvenirs.",
     },
     {
@@ -368,13 +357,13 @@ function IndustriesTabs() {
     {
       name: "Hotels",
       Icon: Hotel,
-      img: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=2070&auto=format&fit=crop", 
+      img: "/assets/restro.webp", 
       desc: "Menus, standees, and guest collateral finished to a hospitality-grade standard.",
     },
     {
       name: "Transport",
       Icon: Truck,
-      img: "https://images.unsplash.com/photo-1585565804112-f201f68c48b4?q=80&w=2070&auto=format&fit=crop", 
+      img: "/assets/transport.webp", 
       desc: "Fleet signage, bill books, and logistics documentation built for the road.",
     },
   ];
@@ -388,10 +377,10 @@ function IndustriesTabs() {
           className="font-display text-2xl lg:text-3xl mb-4 text-center"
           style={{ color: "var(--yellow)" }}
         >
-          Ten industries, one press
+          Many industries, one press
         </p>
         <h2 className="font-display uppercase text-4xl lg:text-5xl text-center text-white mb-12">
-          Industries we serve
+          Some of the industries we serve
         </h2>
 
         <div className="flex flex-wrap justify-center gap-2 mb-12">
