@@ -194,7 +194,11 @@ function ClientStrip() {
           Trusted by 400+ customers across industries, including
         </p>
       </div>
-      <div className="flex w-[200%] animate-marquee gap-8 items-center pl-8">
+      {/* 
+        Increased speeds across all viewports!
+        Mobile is now 8s (very fast). Tablets 15s. Desktop 25s.
+      */}
+      <div className="flex w-[200%] animate-[marquee_8s_linear_infinite] md:animate-[marquee_15s_linear_infinite] lg:animate-[marquee_25s_linear_infinite] gap-8 items-center pl-8">
         {[...logos, ...logos].map((num, i) => {
           const formattedNum = String(num).padStart(2, '0');
           
