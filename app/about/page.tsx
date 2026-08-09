@@ -124,7 +124,7 @@ export default function AboutPage() {
           {/* Main Landscape Shot */}
           <div className="md:col-span-2 relative h-80 rounded-3xl overflow-hidden shadow-lg group">
             {/* PLACEHOLDER: Replace with Press/Machine Floor Landscape Photo */}
-            <Image src="https://images.unsplash.com/photo-1616628188506-4b281f01de98?q=80&w=1000&auto=format&fit=crop" alt="Press Floor" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+            <Image src="/assets/press.jpg" alt="Press Floor" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-8">
               <h3 className="text-white font-display text-2xl tracking-wide">Modern Press Floor</h3>
             </div>
@@ -171,15 +171,15 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {[
-              { name: "Government", sub: "Central, State & Corp", icon: Landmark, img: "https://images.unsplash.com/photo-1523292562811-8fa7962ba5c2?q=80&w=600&auto=format&fit=crop" },
+              { name: "Government", sub: "Central, State & Corp", icon: Landmark, img: "/assets/govt.jpg" },
               { name: "Industries", sub: "Chemical & Tooling", icon: Factory, img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=600&auto=format&fit=crop" },
-              { name: "Constructions", sub: "Builders & Developers", icon: HardHat, img: "https://images.unsplash.com/photo-1541888086225-be8134e7fb2a?q=80&w=600&auto=format&fit=crop" },
+              { name: "Constructions", sub: "Builders & Developers", icon: HardHat, img: "/assets/cons.avif" },
               { name: "Hospitals", sub: "Healthcare & Clinics", icon: HeartPulse, img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=600&auto=format&fit=crop" },
               { name: "Financial", sub: "Inclusion & Banking", icon: Banknote, img: "https://images.unsplash.com/photo-1616803140344-6682afb13cda?q=80&w=600&auto=format&fit=crop" },
               { name: "Hotels", sub: "Hospitality & Restro", icon: Hotel, img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=600&auto=format&fit=crop" },
-              { name: "Jewellers", sub: "Retail & Wholesale", icon: Gem, img: "https://images.unsplash.com/photo-1515562141207-7a8ea33b4792?q=80&w=600&auto=format&fit=crop" },
+              { name: "Jewellers", sub: "Retail & Wholesale", icon: Gem, img: "/assets/jewel.avif" },
               { name: "Schools", sub: "Primary & Secondary", icon: Library, img: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=600&auto=format&fit=crop" },
-              { name: "Transports", sub: "Logistics & Fleet", icon: Truck, img: "https://images.unsplash.com/photo-1586528116311-ad8ed7c1590e?q=80&w=600&auto=format&fit=crop" },
+              { name: "Transports", sub: "Logistics & Fleet", icon: Truck, img: "/assets/transport.webp" },
               { name: "Colleges", sub: "Higher Education", icon: GraduationCap, img: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=600&auto=format&fit=crop" },
             ].map((ind, i) => (
               <div key={i} className="relative rounded-2xl overflow-hidden border border-white/20 text-center hover:-translate-y-1 hover:shadow-2xl hover:border-[var(--yellow)] transition-all duration-300 group min-h-[220px] flex flex-col justify-center items-center p-6">
