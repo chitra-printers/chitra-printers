@@ -3,7 +3,7 @@ import { Anton, Work_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
+import Preloader from "@/components/Preloader";
 // Display face — condensed, poster-bold, carries the "press" feel
 const anton = Anton({
   subsets: ["latin"],
@@ -39,6 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${anton.variable} ${workSans.variable} ${plexMono.variable}`}>
       <body className={`${workSans.className} bg-[var(--paper)] text-[var(--ink)]`}>
+        <Preloader />
         <Navbar />
         {children}
         <Footer />
