@@ -71,7 +71,7 @@ export default function Preloader() {
           
           {/* Brand Name */}
           <h1 
-            className="font-display uppercase font-black text-4xl md:text-5xl tracking-widest text-white mb-4 text-center drop-shadow-md"
+            className="font-display text-4xl md:text-5xl tracking-wide text-white mb-4 text-center drop-shadow-md"
           >
             Chitra Printers
           </h1>

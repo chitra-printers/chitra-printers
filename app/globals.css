@@ -34,8 +34,10 @@ body {
 
 /* Font utility classes — variables come from next/font in layout.tsx */
 .font-display {
-  font-family: var(--font-display), sans-serif;
-  letter-spacing: 0.01em;
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
 }
 .font-body {
   font-family: var(--font-body), sans-serif;

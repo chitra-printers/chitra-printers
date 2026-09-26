@@ -20,6 +20,8 @@ import {
   Library
 } from "lucide-react";
 import RegMark from "@/components/RegMark";
+import YesPlusFeature from "@/components/YesPlusFeature";
+import PhotoGallery from "@/components/PhotoGallery";
 
 export default function AboutPage() {
   return (
@@ -35,7 +37,7 @@ export default function AboutPage() {
             <RegMark size={14} />
             ESTABLISHED 30+ YEARS
           </div>
-          <h1 className="font-display uppercase text-5xl lg:text-7xl text-white tracking-tight">
+          <h1 className="font-display text-5xl lg:text-7xl text-white">
             Our Legacy
           </h1>
           <p className="font-body text-xl text-white/80 mt-6 max-w-3xl mx-auto leading-relaxed">
@@ -51,7 +53,7 @@ export default function AboutPage() {
       <section className="max-w-7xl mx-auto px-6 lg:px-8 relative -mt-16 z-20 mb-24">
         <div className="bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden flex flex-col lg:flex-row">
           <div className="lg:w-1/2 p-10 lg:p-16 flex flex-col justify-center">
-            <h2 className="font-display uppercase text-3xl lg:text-4xl mb-6" style={{ color: "var(--maroon)" }}>
+            <h2 className="font-display text-3xl lg:text-4xl mb-6" style={{ color: "var(--maroon)" }}>
               A Tradition of Excellence
             </h2>
             <p className="font-body text-lg text-[#4a4038] leading-relaxed mb-6">
@@ -62,15 +64,15 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="lg:w-1/2 relative min-h-[400px]">
-            {/* PLACEHOLDER: Replace with your actual Old Press / Timeline Photo */}
             <Image 
-              src="https://images.unsplash.com/photo-1562664377-709f2c337eb2?q=80&w=1000&auto=format&fit=crop" 
-              alt="Vintage Printing Press"
+              src="/assets/tradition.jpg" 
+              alt="The original Chithra Printing & Binding Works shop front"
               fill
-              className="object-cover"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover object-[65%_0%]"
             />
             <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-md px-6 py-3 rounded-xl shadow-lg border border-white/50">
-              <p className="font-display uppercase text-xl" style={{ color: "var(--maroon)" }}>Since 1990</p>
+              <p className="font-display text-xl" style={{ color: "var(--maroon)" }}>Since 1990</p>
             </div>
           </div>
         </div>
@@ -82,12 +84,12 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 relative">
               <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-white relative z-10">
-                {/* PLACEHOLDER: Replace with the actual Founder/Family photo */}
                 <Image 
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop" 
-                  alt="Founder and Family"
+                  src="/assets/owner.jpeg" 
+                  alt="Owner of Chitra Printers at his desk"
                   fill
-                  className="object-cover"
+                  sizes="(min-width: 1024px) 480px, 90vw"
+                  className="object-cover object-[center_60%]"
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 w-48 h-48 rounded-full opacity-20 pointer-events-none" style={{ background: "var(--maroon)" }} />
@@ -97,7 +99,7 @@ export default function AboutPage() {
               <div className="inline-flex items-center gap-2 font-mono text-sm uppercase tracking-widest mb-4 font-bold" style={{ color: "var(--orange)" }}>
                 The Visionaries
               </div>
-              <h2 className="font-display uppercase text-4xl lg:text-5xl mb-8" style={{ color: "var(--maroon)" }}>
+              <h2 className="font-display text-4xl lg:text-5xl mb-8" style={{ color: "var(--maroon)" }}>
                 Family Owned, <br/> Professionally Run
               </h2>
               <blockquote className="border-l-4 pl-6 italic font-body text-2xl text-[#5c5245] mb-8 leading-relaxed" style={{ borderColor: "var(--yellow)" }}>
@@ -114,7 +116,7 @@ export default function AboutPage() {
       {/* 4. WORKSPACE & TEAM FACILITY */}
       <section className="py-24 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-display uppercase text-4xl lg:text-5xl mb-4" style={{ color: "var(--maroon)" }}>Our Facility & Team</h2>
+          <h2 className="font-display text-4xl lg:text-5xl mb-4" style={{ color: "var(--maroon)" }}>Our Facility & Team</h2>
           <p className="font-body text-lg text-[#5c5245] max-w-2xl mx-auto">
             Equipped with modern machinery and powered by a highly skilled workforce, our press floor is where ideas turn into reality.
           </p>
@@ -132,38 +134,31 @@ export default function AboutPage() {
 
           {/* Staff Working 1 */}
           <div className="relative h-80 rounded-3xl overflow-hidden shadow-lg group">
-            {/* PLACEHOLDER: Replace with Staff Working Photo */}
-            <Image src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1000&auto=format&fit=crop" alt="Staff Working" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+            <Image src="/assets/workspace.jpeg" alt="Chitra Printers workspace" fill sizes="(min-width: 768px) 25vw, 90vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-8">
               <h3 className="text-white font-display text-2xl tracking-wide">Skilled Operators</h3>
             </div>
           </div>
 
           {/* Staff Working 2 */}
-          <div className="relative h-80 rounded-3xl overflow-hidden shadow-lg group">
-            {/* PLACEHOLDER: Replace with Staff Team Photo */}
-            <Image src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop" alt="Our Team" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+          <div className="md:col-span-3 relative h-80 lg:h-[26rem] rounded-3xl overflow-hidden shadow-lg group">
+            <Image src="/assets/team.jpeg" alt="The Chitra Printers team" fill sizes="(min-width: 768px) 90vw, 90vw" className="object-cover object-[center_40%] group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-8">
               <h3 className="text-white font-display text-2xl tracking-wide">Dedicated Team</h3>
             </div>
           </div>
 
-          {/* Machine Close Up */}
-          <div className="md:col-span-2 relative h-80 rounded-3xl overflow-hidden shadow-lg group">
-            {/* PLACEHOLDER: Replace with Machine Closeup or Workshop Photo */}
-            <Image src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1000&auto=format&fit=crop" alt="Precision Equipment" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-8">
-              <h3 className="text-white font-display text-2xl tracking-wide">Precision Equipment</h3>
-            </div>
-          </div>
         </div>
       </section>
+
+      {/* GROUP COMPANY: YES PLUS */}
+      <YesPlusFeature compact />
 
       {/* 5. WE SERVE (INDUSTRIES WITH BACKGROUND IMAGES) */}
       <section className="py-24" style={{ background: "var(--maroon)" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="font-display uppercase text-4xl lg:text-5xl mb-4 text-white">We Serve</h2>
+            <h2 className="font-display text-4xl lg:text-5xl mb-4 text-white">We Serve</h2>
             <p className="font-body text-xl text-white/80 max-w-2xl mx-auto">
               The firm is fully equipped to provide a complete range of quality printing services to our esteemed customers across multiple sectors.
             </p>
@@ -200,7 +195,7 @@ export default function AboutPage() {
                   <div className="w-14 h-14 mx-auto rounded-full bg-white flex items-center justify-center mb-4 shadow-lg transform group-hover:scale-110 transition-transform duration-300">
                     <ind.icon size={26} style={{ color: "var(--maroon)" }} />
                   </div>
-                  <h3 className="font-display uppercase text-lg text-white mb-1 tracking-wide group-hover:text-[var(--yellow)] transition-colors duration-300">{ind.name}</h3>
+                  <h3 className="font-display text-lg text-white mb-1 tracking-wide group-hover:text-[var(--yellow)] transition-colors duration-300">{ind.name}</h3>
                   <p className="font-body text-xs text-white/90 uppercase tracking-wider">{ind.sub}</p>
                 </div>
               </div>
@@ -216,7 +211,7 @@ export default function AboutPage() {
             <div className="absolute top-0 right-0 p-8 opacity-5">
               <Lightbulb size={120} />
             </div>
-            <h2 className="text-3xl font-display uppercase mb-6" style={{ color: "var(--orange)" }}>Our Vision</h2>
+            <h2 className="text-3xl font-display mb-6" style={{ color: "var(--orange)" }}>Our Vision</h2>
             <p className="text-[#4a4038] font-body text-xl leading-relaxed italic relative z-10">
               "To be a leading and most trusted industrial and commercial printing partner, recognized for quality, innovation, and dependable service while continuously evolving with modern printing technologies."
             </p>
@@ -226,7 +221,7 @@ export default function AboutPage() {
             <div className="absolute top-0 right-0 p-8 opacity-10 text-white">
               <Target size={120} />
             </div>
-            <h2 className="text-3xl font-display uppercase mb-6 text-[var(--yellow)]">Our Mission</h2>
+            <h2 className="text-3xl font-display mb-6 text-[var(--yellow)]">Our Mission</h2>
             <ul className="space-y-4 text-white/90 font-body text-lg relative z-10">
               <li className="flex items-start gap-3"><RegMark size={16} className="mt-1 text-[var(--yellow)] shrink-0" /> Deliver premium-quality printing with precision.</li>
               <li className="flex items-start gap-3"><RegMark size={16} className="mt-1 text-[var(--yellow)] shrink-0" /> Provide fast, reliable, and cost-effective services.</li>
@@ -237,7 +232,7 @@ export default function AboutPage() {
         </div>
 
         <div className="text-center mb-12">
-          <h2 className="font-display uppercase text-4xl lg:text-5xl" style={{ color: "var(--maroon)" }}>Our Core Values</h2>
+          <h2 className="font-display text-4xl lg:text-5xl" style={{ color: "var(--maroon)" }}>Our Core Values</h2>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
@@ -253,36 +248,31 @@ export default function AboutPage() {
               <div className="w-12 h-12 mx-auto rounded-full mb-4 flex items-center justify-center" style={{ background: "#fdf1d6", color: "var(--orange)" }}>
                 <val.icon size={24} />
               </div>
-              <h3 className="font-display uppercase text-xl mb-2" style={{ color: "var(--maroon)" }}>{val.title}</h3>
+              <h3 className="font-display text-xl mb-2" style={{ color: "var(--maroon)" }}>{val.title}</h3>
               <p className="font-body text-[#5c5245]">{val.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* 7. CHITRA FAMILY TRIP GALLERY (6 Images) */}
+      {/* 7. LIFE AT CHITRA GALLERY */}
       <section className="py-24" style={{ background: "#fdf1d6" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="font-display uppercase text-4xl lg:text-5xl mb-4" style={{ color: "var(--maroon)" }}>Life at Chitra</h2>
+            <h2 className="font-display text-4xl lg:text-5xl mb-4" style={{ color: "var(--maroon)" }}>Life at Chitra</h2>
             <p className="font-body text-lg text-[#5c5245] max-w-2xl mx-auto">
               We believe a strong team is built beyond the press floor. Glimpses from our annual company retreats and team celebrations.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6">
-            {[1, 2, 3, 4, 5, 6].map((num) => (
-              <div key={num} className="relative aspect-square rounded-2xl overflow-hidden shadow-md group">
-                {/* PLACEHOLDER: Replace with actual trip images (trip_1.jpg to trip_6.jpg) */}
-                <Image 
-                  src={`https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?q=80&w=600&auto=format&fit=crop&sig=${num}`} 
-                  alt={`Company Trip ${num}`} 
-                  fill 
-                  className="object-cover group-hover:scale-110 transition-transform duration-500" 
-                />
-              </div>
-            ))}
-          </div>
+          <PhotoGallery
+            featured={{ src: "/assets/team_5.jpeg", alt: "The Chitra Printers team at the office" }}
+            photos={[
+              { src: "/assets/team_2.jpeg", alt: "Chitra team get-together" },
+              { src: "/assets/team_3.jpeg", alt: "Chitra team members together" },
+              { src: "/assets/team_4.jpeg", alt: "Chitra team outing", contain: true },
+            ]}
+          />
         </div>
       </section>
 
@@ -291,7 +281,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           
           <div className="text-center mb-16">
-            <h2 className="font-display uppercase text-3xl lg:text-4xl mb-4" style={{ color: "var(--maroon)" }}>
+            <h2 className="font-display text-3xl lg:text-4xl mb-4" style={{ color: "var(--maroon)" }}>
               Our Esteemed Customers
             </h2>
             <p className="font-body text-lg font-medium text-[#c0392b] max-w-3xl mx-auto">

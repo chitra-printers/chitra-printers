@@ -7,9 +7,7 @@ import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
 function RegMark({ size = 10, className = "", style = {} }: { size?: number; className?: string; style?: React.CSSProperties }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" className={className} style={style} fill="none">
-      <circle cx="12" cy="12" r="9.5" stroke="currentColor" strokeWidth="1.5" />
-      <line x1="12" y1="0" x2="12" y2="24" stroke="currentColor" strokeWidth="1.5" />
-      <line x1="0" y1="12" x2="24" y2="12" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M12 1C12.9 7.6 16.4 11.1 23 12C16.4 12.9 12.9 16.4 12 23C11.1 16.4 7.6 12.9 1 12C7.6 11.1 11.1 7.6 12 1Z" fill="currentColor" />
     </svg>
   );
 }
@@ -18,6 +16,7 @@ const quickLinks = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
   { name: "Services", href: "/services" },
+  { name: "Yes Plus", href: "/yes-plus" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -71,11 +70,17 @@ export default function Footer() {
               <RegMark size={14} />
               Est. 30+ Years
             </span>
+            <p className="font-body text-sm text-white/60 mt-6 leading-relaxed">
+              Group company:{" "}
+              <Link href="/yes-plus" className="text-white/85 underline decoration-[var(--yellow)]/50 underline-offset-4 hover:text-[var(--yellow)] transition-colors">
+                Gurudev Enterprises, makers of Yes Plus cleaning products
+              </Link>
+            </p>
           </div>
 
           {/* Quick Links (Spans 2 columns on desktop) */}
           <div className="lg:col-span-2">
-            <h3 className="font-display uppercase text-lg tracking-widest mb-6" style={{ color: "var(--yellow)" }}>
+            <h3 className="font-display text-xl mb-6" style={{ color: "var(--yellow)" }}>
               Quick Links
             </h3>
             <ul className="space-y-4">
@@ -97,13 +102,13 @@ export default function Footer() {
 
           {/* Services (Spans 3 columns on desktop) */}
           <div className="lg:col-span-3">
-            <h3 className="font-display uppercase text-lg tracking-widest mb-6" style={{ color: "var(--yellow)" }}>
+            <h3 className="font-display text-xl mb-6" style={{ color: "var(--yellow)" }}>
               What We Print
             </h3>
             <ul className="space-y-4">
               {services.map((service) => (
                 <li key={service} className="flex items-center gap-3 font-body text-base text-white/70 group hover:text-white transition-colors cursor-pointer">
-                  <RegMark size={10} className="text-[var(--maroon)] opacity-50 group-hover:text-[var(--orange)] group-hover:opacity-100 transition-colors" />
+                  <RegMark size={10} className="text-[var(--yellow)] opacity-60 group-hover:text-[var(--orange)] group-hover:opacity-100 transition-colors" />
                   {service}
                 </li>
               ))}
@@ -112,7 +117,7 @@ export default function Footer() {
 
           {/* Contact (Spans 3 columns on desktop) */}
           <div className="lg:col-span-3">
-            <h3 className="font-display uppercase text-lg tracking-widest mb-6" style={{ color: "var(--yellow)" }}>
+            <h3 className="font-display text-xl mb-6" style={{ color: "var(--yellow)" }}>
               Get In Touch
             </h3>
             <ul className="space-y-5 font-body text-base text-white/80">
