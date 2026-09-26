@@ -36,14 +36,14 @@ export default function PhotoGallery({ photos: gridPhotos, featured }: { photos:
         <button
           type="button"
           onClick={() => setIndex(0)}
-          className="relative block w-full max-w-4xl mx-auto aspect-[4/3] mb-4 lg:mb-6 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 group cursor-zoom-in border-4 border-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[var(--yellow)]"
+          className="relative block w-full md:w-[calc((100%-2rem)/3*1.6)] lg:w-[calc((100%-3rem)/3*1.6)] mx-auto aspect-[4/3] mb-4 lg:mb-6 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group cursor-zoom-in focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[var(--yellow)]"
           aria-label={`Open photo: ${featured.alt}`}
         >
           <Image
             src={featured.src}
             alt={featured.alt}
             fill
-            sizes="(min-width: 1024px) 900px, 95vw"
+            sizes="(min-width: 768px) 55vw, 95vw"
             className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
           />
           <span className="absolute inset-0 bg-[var(--maroon)]/0 group-hover:bg-[var(--maroon)]/30 transition-colors duration-300 flex items-center justify-center">
