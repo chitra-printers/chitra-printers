@@ -83,12 +83,12 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 relative">
               <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-white relative z-10">
-                {/* PLACEHOLDER: Replace with the actual Founder/Family photo */}
                 <Image 
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop" 
-                  alt="Founder and Family"
+                  src="/assets/owner.jpeg" 
+                  alt="Owner of Chitra Printers at his desk"
                   fill
-                  className="object-cover"
+                  sizes="(min-width: 1024px) 480px, 90vw"
+                  className="object-cover object-[center_60%]"
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 w-48 h-48 rounded-full opacity-20 pointer-events-none" style={{ background: "var(--maroon)" }} />
@@ -133,30 +133,28 @@ export default function AboutPage() {
 
           {/* Staff Working 1 */}
           <div className="relative h-80 rounded-3xl overflow-hidden shadow-lg group">
-            {/* PLACEHOLDER: Replace with Staff Working Photo */}
-            <Image src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1000&auto=format&fit=crop" alt="Staff Working" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+            <Image src="/assets/workspace.jpeg" alt="Chitra Printers workspace" fill sizes="(min-width: 768px) 25vw, 90vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-8">
               <h3 className="text-white font-display text-2xl tracking-wide">Skilled Operators</h3>
             </div>
           </div>
 
-          {/* Staff Working 2 */}
-          <div className="relative h-80 rounded-3xl overflow-hidden shadow-lg group">
-            {/* PLACEHOLDER: Replace with Staff Team Photo */}
-            <Image src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop" alt="Our Team" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-8">
-              <h3 className="text-white font-display text-2xl tracking-wide">Dedicated Team</h3>
-            </div>
-          </div>
-
           {/* Machine Close Up */}
-          <div className="md:col-span-2 relative h-80 rounded-3xl overflow-hidden shadow-lg group">
+          <div className="relative h-80 rounded-3xl overflow-hidden shadow-lg group">
             {/* PLACEHOLDER: Replace with Machine Closeup or Workshop Photo */}
             <Image src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1000&auto=format&fit=crop" alt="Precision Equipment" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-8">
               <h3 className="text-white font-display text-2xl tracking-wide">Precision Equipment</h3>
             </div>
           </div>
+          {/* Staff Working 2 */}
+          <div className="md:col-span-2 relative h-80 rounded-3xl overflow-hidden shadow-lg group">
+            <Image src="/assets/team.jpeg" alt="The Chitra Printers team" fill sizes="(min-width: 768px) 60vw, 90vw" className="object-cover object-[center_40%] group-hover:scale-105 transition-transform duration-700" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-8">
+              <h3 className="text-white font-display text-2xl tracking-wide">Dedicated Team</h3>
+            </div>
+          </div>
+
         </div>
       </section>
 

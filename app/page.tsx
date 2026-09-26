@@ -48,9 +48,7 @@ function RegMark({ className = "", size = 22, style = {} }) {
       style={style}
       fill="none"
     >
-      <circle cx="12" cy="12" r="9.5" stroke="currentColor" strokeWidth="1" />
-      <line x1="12" y1="0" x2="12" y2="24" stroke="currentColor" strokeWidth="1" />
-      <line x1="0" y1="12" x2="24" y2="12" stroke="currentColor" strokeWidth="1" />
+      <path d="M12 1C12.9 7.6 16.4 11.1 23 12C16.4 12.9 12.9 16.4 12 23C11.1 16.4 7.6 12.9 1 12C7.6 11.1 11.1 7.6 12 1Z" fill="currentColor" />
     </svg>
   );
 }
