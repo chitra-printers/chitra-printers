@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import RegMark from "@/components/RegMark";
 import YesPlusFeature from "@/components/YesPlusFeature";
+import PhotoGallery from "@/components/PhotoGallery";
 
 export default function AboutPage() {
   return (
@@ -139,17 +140,9 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Machine Close Up */}
-          <div className="relative h-80 rounded-3xl overflow-hidden shadow-lg group">
-            {/* PLACEHOLDER: Replace with Machine Closeup or Workshop Photo */}
-            <Image src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1000&auto=format&fit=crop" alt="Precision Equipment" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-8">
-              <h3 className="text-white font-display text-2xl tracking-wide">Precision Equipment</h3>
-            </div>
-          </div>
           {/* Staff Working 2 */}
-          <div className="md:col-span-2 relative h-80 rounded-3xl overflow-hidden shadow-lg group">
-            <Image src="/assets/team.jpeg" alt="The Chitra Printers team" fill sizes="(min-width: 768px) 60vw, 90vw" className="object-cover object-[center_40%] group-hover:scale-105 transition-transform duration-700" />
+          <div className="md:col-span-3 relative h-80 lg:h-[26rem] rounded-3xl overflow-hidden shadow-lg group">
+            <Image src="/assets/team.jpeg" alt="The Chitra Printers team" fill sizes="(min-width: 768px) 90vw, 90vw" className="object-cover object-[center_40%] group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-8">
               <h3 className="text-white font-display text-2xl tracking-wide">Dedicated Team</h3>
             </div>
@@ -272,23 +265,13 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
-            {[
+          <PhotoGallery
+            photos={[
               { src: "/assets/team_2.jpeg", alt: "Chitra team get-together" },
               { src: "/assets/team_3.jpeg", alt: "Chitra team members together" },
-              { src: "/assets/team_4.jpeg", alt: "Chitra team outing" },
-            ].map((photo) => (
-              <div key={photo.src} className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md group">
-                <Image 
-                  src={photo.src} 
-                  alt={photo.alt} 
-                  fill 
-                  sizes="(min-width: 768px) 33vw, 90vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500" 
-                />
-              </div>
-            ))}
-          </div>
+              { src: "/assets/team_4.jpeg", alt: "Chitra team outing", contain: true },
+            ]}
+          />
         </div>
       </section>
 
