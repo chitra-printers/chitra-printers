@@ -266,6 +266,7 @@ export default function AboutPage() {
           </div>
 
           <PhotoGallery
+            featured={{ src: "/assets/team_5.jpeg", alt: "The Chitra Printers team at the office" }}
             photos={[
               { src: "/assets/team_2.jpeg", alt: "Chitra team get-together" },
               { src: "/assets/team_3.jpeg", alt: "Chitra team members together" },

@@ -10,8 +10,10 @@ export type GalleryPhoto = {
   contain?: boolean; // show the whole photo instead of cropping it to the tile
 };
 
-// Photo grid whose tiles open a full-size view on click
-export default function PhotoGallery({ photos }: { photos: GalleryPhoto[] }) {
+// Photo grid (with an optional large featured photo above it) whose tiles open a full-size view on click
+export default function PhotoGallery({ photos: gridPhotos, featured }: { photos: GalleryPhoto[]; featured?: GalleryPhoto }) {
+  const photos = featured ? [featured, ...gridPhotos] : gridPhotos;
+  const offset = featured ? 1 : 0;
   const [index, setIndex] = useState<number | null>(null);
   const open = index === null ? null : photos[index];
   const step = (d: number) => setIndex((i) => (i === null ? i : (i + d + photos.length) % photos.length));
@@ -30,12 +32,34 @@ export default function PhotoGallery({ photos }: { photos: GalleryPhoto[] }) {
 
   return (
     <>
+      {featured && (
+        <button
+          type="button"
+          onClick={() => setIndex(0)}
+          className="relative block w-full max-w-4xl mx-auto aspect-[4/3] mb-4 lg:mb-6 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 group cursor-zoom-in border-4 border-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[var(--yellow)]"
+          aria-label={`Open photo: ${featured.alt}`}
+        >
+          <Image
+            src={featured.src}
+            alt={featured.alt}
+            fill
+            sizes="(min-width: 1024px) 900px, 95vw"
+            className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
+          />
+          <span className="absolute inset-0 bg-[var(--maroon)]/0 group-hover:bg-[var(--maroon)]/30 transition-colors duration-300 flex items-center justify-center">
+            <span className="flex items-center gap-2 font-body font-semibold text-sm text-white bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+              <Expand size={16} /> View photo
+            </span>
+          </span>
+        </button>
+      )}
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
-        {photos.map((photo, i) => (
+        {gridPhotos.map((photo, i) => (
           <button
             key={photo.src}
             type="button"
-            onClick={() => setIndex(i)}
+            onClick={() => setIndex(i + offset)}
             className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group cursor-zoom-in focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[var(--yellow)]"
             aria-label={`Open photo: ${photo.alt}`}
           >
