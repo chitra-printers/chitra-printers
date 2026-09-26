@@ -33,14 +33,14 @@ export default function ContactPage() {
 
       {/* Main Content: Asymmetric Split Layout */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8 relative -mt-24 z-20">
-        <div className="grid lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* LEFT COLUMN: Contact Details (5 columns wide) */}
-          <div className="lg:col-span-5 flex flex-col gap-6">
+          <div className="lg:col-span-5 flex flex-col gap-6 min-w-0">
             
             {/* Call Us Card */}
-            <div className="bg-white p-8 lg:p-10 rounded-3xl shadow-xl border border-slate-100 hover:shadow-2xl transition-shadow duration-300">
-              <div className="flex items-start gap-5">
+            <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-3xl shadow-xl border border-slate-100 hover:shadow-2xl transition-shadow duration-300">
+              <div className="flex items-start gap-4 sm:gap-5">
                 <div className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0" style={{ background: "#fdf1d6", color: "var(--maroon)" }}>
                   <Phone size={24} strokeWidth={2.5} />
                 </div>
@@ -74,8 +74,8 @@ export default function ContactPage() {
             </div>
 
             {/* Email Us Card */}
-            <div className="bg-white p-8 lg:p-10 rounded-3xl shadow-xl border border-slate-100 hover:shadow-2xl transition-shadow duration-300">
-              <div className="flex items-start gap-5">
+            <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-3xl shadow-xl border border-slate-100 hover:shadow-2xl transition-shadow duration-300">
+              <div className="flex items-start gap-4 sm:gap-5">
                 <div className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0" style={{ background: "#fdf1d6", color: "var(--maroon)" }}>
                   <Mail size={24} strokeWidth={2.5} />
                 </div>
@@ -96,7 +96,7 @@ export default function ContactPage() {
           </div>
 
           {/* RIGHT COLUMN: Map & Location (7 columns wide) */}
-          <div className="lg:col-span-7 bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden flex flex-col h-full min-h-[600px]">
+          <div className="lg:col-span-7 min-w-0 bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden flex flex-col h-full min-h-[600px]">
             
             {/* Location Info Header */}
             <div className="p-8 lg:p-10 bg-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 border-b border-slate-100 relative">

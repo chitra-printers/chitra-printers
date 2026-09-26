@@ -38,9 +38,9 @@ export default function Navbar() {
                 priority
                 className="object-contain h-14 lg:h-16 w-auto"
               />
-              <span className="hidden sm:flex flex-col leading-none text-maroon">
-                <span className="font-display text-2xl lg:text-[2rem]">Chitra Printers</span>
-                <span className="font-body font-medium text-[0.65rem] lg:text-xs uppercase tracking-[0.25em] mt-1.5 opacity-75">
+              <span className="flex flex-col leading-none text-maroon">
+                <span className="font-display text-xl sm:text-2xl lg:text-[2rem]">Chitra Printers</span>
+                <span className="hidden sm:block font-body font-medium text-[0.65rem] lg:text-xs uppercase tracking-[0.25em] mt-1.5 opacity-75">
                   Industrial &amp; Commercial Printing
                 </span>
               </span>

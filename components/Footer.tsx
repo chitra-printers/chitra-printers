@@ -108,7 +108,7 @@ export default function Footer() {
             <ul className="space-y-4">
               {services.map((service) => (
                 <li key={service} className="flex items-center gap-3 font-body text-base text-white/70 group hover:text-white transition-colors cursor-pointer">
-                  <RegMark size={10} className="text-[var(--maroon)] opacity-50 group-hover:text-[var(--orange)] group-hover:opacity-100 transition-colors" />
+                  <RegMark size={10} className="text-[var(--yellow)] opacity-60 group-hover:text-[var(--orange)] group-hover:opacity-100 transition-colors" />
                   {service}
                 </li>
               ))}

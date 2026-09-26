@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { X } from "lucide-react";
+import { X, Expand, ChevronLeft, ChevronRight } from "lucide-react";
 
 export type GalleryPhoto = {
   src: string;
@@ -12,24 +12,31 @@ export type GalleryPhoto = {
 
 // Photo grid whose tiles open a full-size view on click
 export default function PhotoGallery({ photos }: { photos: GalleryPhoto[] }) {
-  const [open, setOpen] = useState<GalleryPhoto | null>(null);
+  const [index, setIndex] = useState<number | null>(null);
+  const open = index === null ? null : photos[index];
+  const step = (d: number) => setIndex((i) => (i === null ? i : (i + d + photos.length) % photos.length));
 
   useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(null);
+    if (index === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIndex(null);
+      if (e.key === "ArrowRight") step(1);
+      if (e.key === "ArrowLeft") step(-1);
+    };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [open]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [index]);
 
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
-        {photos.map((photo) => (
+        {photos.map((photo, i) => (
           <button
             key={photo.src}
             type="button"
-            onClick={() => setOpen(photo)}
-            className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md group cursor-zoom-in"
+            onClick={() => setIndex(i)}
+            className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group cursor-zoom-in focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[var(--yellow)]"
             aria-label={`Open photo: ${photo.alt}`}
           >
             {photo.contain && (
@@ -42,6 +49,11 @@ export default function PhotoGallery({ photos }: { photos: GalleryPhoto[] }) {
               sizes="(min-width: 768px) 33vw, 90vw"
               className={`${photo.contain ? "object-contain" : "object-cover"} group-hover:scale-105 transition-transform duration-500`}
             />
+            <span className="absolute inset-0 bg-[var(--maroon)]/0 group-hover:bg-[var(--maroon)]/35 transition-colors duration-300 flex items-center justify-center">
+              <span className="flex items-center gap-2 font-body font-semibold text-sm text-white bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                <Expand size={16} /> View photo
+              </span>
+            </span>
           </button>
         ))}
       </div>
@@ -49,20 +61,40 @@ export default function PhotoGallery({ photos }: { photos: GalleryPhoto[] }) {
       {open && (
         <div
           className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4 cursor-zoom-out"
-          onClick={() => setOpen(null)}
+          onClick={() => setIndex(null)}
           role="dialog"
           aria-modal="true"
         >
           <button
             type="button"
             className="absolute top-6 right-6 text-white bg-black/50 p-2 rounded-full hover:text-[var(--yellow)] transition-colors"
-            onClick={() => setOpen(null)}
+            onClick={() => setIndex(null)}
             aria-label="Close photo"
           >
             <X size={32} />
           </button>
+          {photos.length > 1 && (
+            <>
+              <button
+                type="button"
+                className="absolute left-4 md:left-8 text-white bg-black/50 p-2 rounded-full hover:text-[var(--yellow)] transition-colors"
+                onClick={(e) => { e.stopPropagation(); step(-1); }}
+                aria-label="Previous photo"
+              >
+                <ChevronLeft size={32} />
+              </button>
+              <button
+                type="button"
+                className="absolute right-4 md:right-8 text-white bg-black/50 p-2 rounded-full hover:text-[var(--yellow)] transition-colors"
+                onClick={(e) => { e.stopPropagation(); step(1); }}
+                aria-label="Next photo"
+              >
+                <ChevronRight size={32} />
+              </button>
+            </>
+          )}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={open.src} alt={open.alt} className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl" />
+          <img src={open.src} alt={open.alt} className="max-w-[calc(100%-7rem)] md:max-w-[calc(100%-10rem)] max-h-[90vh] object-contain rounded-lg shadow-2xl" onClick={(e) => e.stopPropagation()} />
         </div>
       )}
     </>
