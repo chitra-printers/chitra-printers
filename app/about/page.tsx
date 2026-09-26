@@ -64,12 +64,12 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="lg:w-1/2 relative min-h-[400px]">
-            {/* PLACEHOLDER: Replace with your actual Old Press / Timeline Photo */}
             <Image 
-              src="https://images.unsplash.com/photo-1562664377-709f2c337eb2?q=80&w=1000&auto=format&fit=crop" 
-              alt="Vintage Printing Press"
+              src="/assets/tradition.jpg" 
+              alt="The original Chithra Printing & Binding Works shop front"
               fill
-              className="object-cover"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover object-[65%_0%]"
             />
             <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-md px-6 py-3 rounded-xl shadow-lg border border-white/50">
               <p className="font-display text-xl" style={{ color: "var(--maroon)" }}>Since 1990</p>
