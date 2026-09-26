@@ -8,10 +8,10 @@ import { yesPlusProducts, yesPlusEnquiryUrl } from "@/lib/yesplus";
 export function YesPlusWordmark({ className = "h-[1.3em]" }: { className?: string }) {
   return (
     <Image
-      src="/assets/yesplus/yesplus-logo.png"
+      src="/assets/yesplus/yesplus-logo-full.png"
       alt="Yesplus"
       width={737}
-      height={332}
+      height={396}
       className={`inline-block w-auto align-middle ${className}`}
     />
   );
@@ -38,7 +38,7 @@ export default function YesPlusFeature({ compact = false }: { compact?: boolean 
             From our group
           </p>
           <h2 className="font-display text-4xl lg:text-5xl mb-6" style={{ color: "var(--maroon)" }}>
-            <YesPlusWordmark className="h-[1.5em] -ml-1 mr-2 -mt-3" /> cleaning products
+            <YesPlusWordmark className="h-[1.8em] -ml-1 mr-2 -mt-4" /> cleaning products
           </h2>
           <p className="font-body text-lg leading-relaxed text-[#5c5245] mb-4">
             Yes Plus is a brand of <strong className="font-semibold text-[var(--ink)]">Gurudev Enterprises</strong>, a sister
