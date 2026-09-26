@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight, MessageCircle, Phone } from "lucide-react";
 import RegMark from "@/components/RegMark";
-import { YesPlusWordmark } from "@/components/YesPlusFeature";
+import { YesPlusWordmark, GurudevLogo } from "@/components/YesPlusFeature";
 import { yesPlusProducts, yesPlusEnquiryUrl } from "@/lib/yesplus";
 
 export const metadata: Metadata = {
@@ -25,9 +25,11 @@ export default function YesPlusPage() {
             <RegMark size={14} />
             A GURUDEV ENTERPRISES BRAND
           </div>
+          <div className="mx-auto mb-8 w-fit bg-[#fdf1d6] rounded-3xl shadow-2xl px-8 py-5 lg:px-10 lg:py-6">
+            <YesPlusWordmark className="h-20 lg:h-28" />
+          </div>
           <h1 className="font-display text-5xl lg:text-7xl text-white">
-            Yesplus<sup className="font-body font-bold text-3xl lg:text-4xl ml-1" style={{ color: "var(--yellow)" }}>+</sup>{" "}
-            Cleaning Products
+            <span className="sr-only">Yesplus </span>Cleaning Products
           </h1>
           <p className="font-body text-xl text-white/80 mt-6 max-w-2xl mx-auto leading-relaxed">
             South India&apos;s most popular and favourite cleaning brand, now in Pune. One trusted range for
@@ -45,12 +47,12 @@ export default function YesPlusPage() {
           style={{ borderColor: "rgba(131,22,24,0.08)" }}
         >
           <div>
-            <p className="font-mono text-xs uppercase tracking-widest mb-2" style={{ color: "var(--orange)" }}>Brand</p>
-            <p className="font-display text-2xl"><YesPlusWordmark /></p>
+            <p className="font-mono text-xs uppercase tracking-widest mb-3" style={{ color: "var(--orange)" }}>Brand</p>
+            <YesPlusWordmark className="h-14 mx-auto md:mx-0" />
           </div>
           <div className="md:border-l md:pl-8" style={{ borderColor: "rgba(131,22,24,0.12)" }}>
-            <p className="font-mono text-xs uppercase tracking-widest mb-2" style={{ color: "var(--orange)" }}>Made by</p>
-            <p className="font-display text-2xl" style={{ color: "var(--maroon)" }}>Gurudev Enterprises</p>
+            <p className="font-mono text-xs uppercase tracking-widest mb-3" style={{ color: "var(--orange)" }}>Made by</p>
+            <GurudevLogo className="h-16 mx-auto md:mx-0" />
           </div>
           <div className="md:border-l md:pl-8" style={{ borderColor: "rgba(131,22,24,0.12)" }}>
             <p className="font-mono text-xs uppercase tracking-widest mb-2" style={{ color: "var(--orange)" }}>Sister concern of</p>

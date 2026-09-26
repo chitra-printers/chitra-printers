@@ -4,12 +4,24 @@ import { ArrowUpRight, MessageCircle } from "lucide-react";
 import RegMark from "@/components/RegMark";
 import { yesPlusProducts, yesPlusEnquiryUrl } from "@/lib/yesplus";
 
-// Wordmark for the Yes Plus brand (no logo file yet)
-export function YesPlusWordmark({ className = "" }: { className?: string }) {
+// Yes Plus and Gurudev Enterprises logos, cut from the Yes Plus poster (transparent PNGs, for light backgrounds)
+export function YesPlusWordmark({ className = "h-[1.3em]" }: { className?: string }) {
   return (
-    <span className={`font-display italic ${className}`} style={{ color: "var(--maroon)" }}>
-      Yesplus<sup className="not-italic font-body font-bold ml-0.5" style={{ color: "var(--orange)" }}>+</sup>
-    </span>
+    <Image
+      src="/assets/yesplus/yesplus-logo.png"
+      alt="Yesplus"
+      width={737}
+      height={332}
+      className={`inline-block w-auto align-middle ${className}`}
+    />
+  );
+}
+
+export function GurudevLogo({ className = "h-16", mark = false }: { className?: string; mark?: boolean }) {
+  return mark ? (
+    <Image src="/assets/yesplus/gurudev-mark.png" alt="Gurudev Enterprises" width={264} height={223} className={`w-auto ${className}`} />
+  ) : (
+    <Image src="/assets/yesplus/gurudev-logo.png" alt="Gurudev Enterprises" width={974} height={374} className={`w-auto ${className}`} />
   );
 }
 
@@ -26,14 +38,19 @@ export default function YesPlusFeature({ compact = false }: { compact?: boolean 
             From our group
           </p>
           <h2 className="font-display text-4xl lg:text-5xl mb-6" style={{ color: "var(--maroon)" }}>
-            <YesPlusWordmark /> cleaning products
+            <YesPlusWordmark className="h-[1.5em] -ml-1 mr-2 -mt-3" /> cleaning products
           </h2>
           <p className="font-body text-lg leading-relaxed text-[#5c5245] mb-4">
             Yes Plus is a brand of <strong className="font-semibold text-[var(--ink)]">Gurudev Enterprises</strong>, a sister
             concern of Chitra Printers. South India&apos;s popular cleaning range is now available in Pune, from hand
             wash and dish wash to glass, tiles and car care.
           </p>
-          <p className="font-body text-base italic text-[#6b5f4f] mb-8">Be a part of all cleaning solution.</p>
+          <div className="flex items-center gap-3 mb-8">
+            <GurudevLogo mark className="h-10" />
+            <p className="font-body text-base italic text-[#6b5f4f]">
+              A Gurudev Enterprises brand. Be a part of all cleaning solution.
+            </p>
+          </div>
           <div className="flex flex-wrap gap-4">
             <Link
               href="/yes-plus"
