@@ -17,7 +17,7 @@ export default function ContactPage() {
             <RegMark size={14} />
             WE ARE HERE TO HELP
           </div>
-          <h1 className="font-display uppercase text-5xl lg:text-7xl text-white tracking-tight">
+          <h1 className="font-display text-5xl lg:text-7xl text-white">
             Get in Touch
           </h1>
           <p className="font-body text-xl text-white/80 mt-6 max-w-2xl mx-auto leading-relaxed">
@@ -45,7 +45,7 @@ export default function ContactPage() {
                   <Phone size={24} strokeWidth={2.5} />
                 </div>
                 <div className="w-full">
-                  <h2 className="font-display uppercase text-2xl mb-4" style={{ color: "var(--maroon)" }}>Call Us</h2>
+                  <h2 className="font-display text-2xl mb-4" style={{ color: "var(--maroon)" }}>Call Us</h2>
                   <div className="flex flex-col space-y-3 font-body font-bold text-lg text-[#4a4038]">
                     <a href="tel:+919767742598" className="flex items-center justify-between group hover:text-[var(--orange)] transition-colors">
                       +91 97677 42598 <ArrowRight size={16} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
@@ -80,7 +80,7 @@ export default function ContactPage() {
                   <Mail size={24} strokeWidth={2.5} />
                 </div>
                 <div className="w-full overflow-hidden">
-                  <h2 className="font-display uppercase text-2xl mb-4" style={{ color: "var(--maroon)" }}>Email Us</h2>
+                  <h2 className="font-display text-2xl mb-4" style={{ color: "var(--maroon)" }}>Email Us</h2>
                   <div className="flex flex-col space-y-4 font-body font-semibold text-[#4a4038]">
                     <a href="mailto:chitra.printer@rediffmail.com" className="block group hover:text-[var(--orange)] transition-colors truncate">
                       chitra.printer@rediffmail.com
@@ -107,7 +107,7 @@ export default function ContactPage() {
                   <MapPin size={24} strokeWidth={2.5} />
                 </div>
                 <div>
-                  <h2 className="font-display uppercase text-2xl mb-2" style={{ color: "var(--maroon)" }}>Visit Our Press</h2>
+                  <h2 className="font-display text-2xl mb-2" style={{ color: "var(--maroon)" }}>Visit Our Press</h2>
                   <p className="font-body text-[#5c5245] leading-relaxed max-w-sm">
                     68/23, Masulkar Tower, <br />
                     Masulkar Colony, Pimpri, <br />
@@ -142,7 +142,7 @@ export default function ContactPage() {
               href="https://www.google.com/maps/search/?api=1&query=68/23,+Masulkar+Tower,+Masulkar+Colony,+Pimpri,+Pune+411018"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-5 text-center font-display uppercase tracking-widest text-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
+              className="w-full py-5 text-center font-body font-bold uppercase tracking-widest text-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
               style={{ background: "var(--maroon)", color: "var(--yellow)" }}
             >
               Get Directions via Google Maps <ArrowUpRight size={16} />

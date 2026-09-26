@@ -18,6 +18,7 @@ const quickLinks = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
   { name: "Services", href: "/services" },
+  { name: "Yes Plus", href: "/yes-plus" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -71,11 +72,17 @@ export default function Footer() {
               <RegMark size={14} />
               Est. 30+ Years
             </span>
+            <p className="font-body text-sm text-white/60 mt-6 leading-relaxed">
+              Group company:{" "}
+              <Link href="/yes-plus" className="text-white/85 underline decoration-[var(--yellow)]/50 underline-offset-4 hover:text-[var(--yellow)] transition-colors">
+                Gurudev Enterprises, makers of Yes Plus cleaning products
+              </Link>
+            </p>
           </div>
 
           {/* Quick Links (Spans 2 columns on desktop) */}
           <div className="lg:col-span-2">
-            <h3 className="font-display uppercase text-lg tracking-widest mb-6" style={{ color: "var(--yellow)" }}>
+            <h3 className="font-display text-xl mb-6" style={{ color: "var(--yellow)" }}>
               Quick Links
             </h3>
             <ul className="space-y-4">
@@ -97,7 +104,7 @@ export default function Footer() {
 
           {/* Services (Spans 3 columns on desktop) */}
           <div className="lg:col-span-3">
-            <h3 className="font-display uppercase text-lg tracking-widest mb-6" style={{ color: "var(--yellow)" }}>
+            <h3 className="font-display text-xl mb-6" style={{ color: "var(--yellow)" }}>
               What We Print
             </h3>
             <ul className="space-y-4">
@@ -112,7 +119,7 @@ export default function Footer() {
 
           {/* Contact (Spans 3 columns on desktop) */}
           <div className="lg:col-span-3">
-            <h3 className="font-display uppercase text-lg tracking-widest mb-6" style={{ color: "var(--yellow)" }}>
+            <h3 className="font-display text-xl mb-6" style={{ color: "var(--yellow)" }}>
               Get In Touch
             </h3>
             <ul className="space-y-5 font-body text-base text-white/80">

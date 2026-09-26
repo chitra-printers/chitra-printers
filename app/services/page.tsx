@@ -114,7 +114,7 @@ export default function ServicesPage() {
             <RegMark size={14} />
             WHAT WE PROVIDE
           </div>
-          <h1 className="font-display uppercase text-5xl lg:text-7xl text-white tracking-tight">Everything You Need, Printed Right</h1>
+          <h1 className="font-display text-5xl lg:text-7xl text-white">Everything You Need, Printed Right</h1>
           <p className="font-body text-xl text-white/80 mt-6 max-w-2xl mx-auto leading-relaxed">
             From everyday office stationery to large event signage, our machines and team cover the full range —
             so whatever your business needs printed, you can get it done in one place, on time, and at the quality you expect.
@@ -126,14 +126,14 @@ export default function ServicesPage() {
       <section className="py-24" style={{ background: "#fdf1d6" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <p className="font-mono text-sm uppercase tracking-widest mb-4 text-center font-bold" style={{ color: "var(--maroon)" }}>How It Works</p>
-          <h2 className="font-display uppercase text-4xl lg:text-5xl text-center mb-20" style={{ color: "var(--maroon)" }}>Simple Steps to Get Your Print</h2>
+          <h2 className="font-display text-4xl lg:text-5xl text-center mb-20" style={{ color: "var(--maroon)" }}>Simple Steps to Get Your Print</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
             {process.map((step, idx) => (
               <div key={idx} className="text-center relative group bg-white p-8 rounded-2xl shadow-md border-b-4 transition-shadow duration-200 hover:shadow-xl" style={{ borderColor: "var(--maroon)" }}>
                 <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 font-display text-3xl shadow-lg transform group-hover:-translate-y-1 transition-transform duration-200" style={{ background: "var(--maroon)", color: "var(--yellow)" }}>
                   {idx + 1}
                 </div>
-                <h3 className="font-display uppercase text-2xl mb-4" style={{ color: "var(--maroon)" }}>{step.label}</h3>
+                <h3 className="font-display text-2xl mb-4" style={{ color: "var(--maroon)" }}>{step.label}</h3>
                 <p className="font-body text-lg leading-relaxed text-[#5c5245]">{step.desc}</p>
               </div>
             ))}
@@ -144,7 +144,7 @@ export default function ServicesPage() {
       {/* Services intro */}
       <section className="pt-24 pb-4 max-w-7xl mx-auto px-6 lg:px-8 text-center">
         <p className="font-mono text-sm uppercase tracking-widest mb-4 font-bold" style={{ color: "var(--maroon)" }}>Our Services</p>
-        <h2 className="font-display uppercase text-4xl lg:text-5xl mb-6" style={{ color: "var(--maroon)" }}>Items We Print</h2>
+        <h2 className="font-display text-4xl lg:text-5xl mb-6" style={{ color: "var(--maroon)" }}>Items We Print</h2>
         <p className="font-body text-lg text-[#5c5245] max-w-2xl mx-auto leading-relaxed">
           A look at the range of everyday and specialty items we produce in-house — browse a category below to see real samples of our work.
         </p>
@@ -172,7 +172,7 @@ export default function ServicesPage() {
                   <div className="w-14 h-14 rounded-full flex items-center justify-center shrink-0 shadow-inner" style={{ background: "#fdf1d6" }}>
                     <Icon size={28} style={{ color: "var(--maroon)" }} />
                   </div>
-                  <h2 className="font-display uppercase text-2xl lg:text-3xl" style={{ color: "var(--maroon)" }}>{title}</h2>
+                  <h2 className="font-display text-2xl lg:text-3xl" style={{ color: "var(--maroon)" }}>{title}</h2>
                 </div>
                 <p className="font-body text-[#4a4038] text-lg leading-relaxed">{desc}</p>
               </div>
@@ -184,7 +184,7 @@ export default function ServicesPage() {
       {/* CTA */}
       <section className="py-24" style={{ background: "#fdf1d6" }}>
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="font-display uppercase text-4xl lg:text-5xl mb-8 tracking-tight" style={{ color: "var(--maroon)" }}>Ready to print with us?</h2>
+          <h2 className="font-display text-4xl lg:text-5xl mb-8" style={{ color: "var(--maroon)" }}>Ready to print with us?</h2>
           <p className="font-body text-xl mb-12 max-w-2xl mx-auto text-[#5c5245]">
             Call us today or visit our shop in Pimpri. We will give you the best quality at the right price.
           </p>

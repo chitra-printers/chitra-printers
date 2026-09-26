@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import YesPlusFeature from "@/components/YesPlusFeature";
 import {
   CalendarDays,
   HeartPulse,
@@ -28,6 +29,7 @@ export default function Home() {
       <ClientStrip />
       <ServicesGrid />
       <IndustriesTabs />
+      <YesPlusFeature />
       <StatsSection />
       <CtaBanner />
     </main>
@@ -88,7 +90,7 @@ function HeroSection() {
             </p>
 
             <h1
-              className="font-display uppercase text-5xl lg:text-6xl leading-[1.05]"
+              className="font-display text-5xl lg:text-6xl leading-[1.05]"
               style={{ color: "var(--maroon)" }}
             >
               Every print
@@ -142,7 +144,7 @@ function HeroSection() {
                 }}
               />
               <div className="absolute bottom-6 left-6 right-6 text-white">
-                <p className="font-display uppercase text-2xl">
+                <p className="font-display text-2xl">
                   Modern Technology
                 </p>
                 <p className="font-body text-orange-100 text-sm mt-1">
@@ -271,7 +273,7 @@ function ServicesGrid() {
           What we produce
         </p>
         <h2
-          className="font-display uppercase text-4xl lg:text-5xl leading-tight"
+          className="font-display text-4xl lg:text-5xl leading-tight"
           style={{ color: "var(--maroon)" }}
         >
           Complete printing solutions
@@ -311,7 +313,7 @@ function ServicesGrid() {
               {/* Text Blocks */}
               <div className="mt-8 transform transition-transform duration-300 translate-y-2 group-hover:translate-y-0">
                 <h3
-                  className="font-display uppercase text-2xl mb-3 text-white group-hover:text-[var(--yellow)] transition-colors duration-300"
+                  className="font-display text-2xl mb-3 text-white group-hover:text-[var(--yellow)] transition-colors duration-300"
                 >
                   {title}
                 </h3>
@@ -383,7 +385,7 @@ function IndustriesTabs() {
         >
           Many industries, one press
         </p>
-        <h2 className="font-display uppercase text-4xl lg:text-5xl text-center text-white mb-12">
+        <h2 className="font-display text-4xl lg:text-5xl text-center text-white mb-12">
           Some of the industries we serve
         </h2>
 
@@ -422,7 +424,7 @@ function IndustriesTabs() {
               <Active.Icon size={26} style={{ color: "var(--maroon)" }} />
             </div>
             <h3
-              className="font-display uppercase text-3xl mb-4"
+              className="font-display text-3xl mb-4"
               style={{ color: "var(--maroon)" }}
             >
               {Active.name}
@@ -500,7 +502,7 @@ function CtaBanner() {
     >
       <div className="max-w-4xl mx-auto px-6 text-center">
         <h2
-          className="font-display uppercase text-3xl lg:text-4xl mb-5"
+          className="font-display text-3xl lg:text-4xl mb-5"
           style={{ color: "var(--maroon)" }}
         >
           Ready to put it in print?

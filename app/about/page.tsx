@@ -20,6 +20,7 @@ import {
   Library
 } from "lucide-react";
 import RegMark from "@/components/RegMark";
+import YesPlusFeature from "@/components/YesPlusFeature";
 
 export default function AboutPage() {
   return (
@@ -35,7 +36,7 @@ export default function AboutPage() {
             <RegMark size={14} />
             ESTABLISHED 30+ YEARS
           </div>
-          <h1 className="font-display uppercase text-5xl lg:text-7xl text-white tracking-tight">
+          <h1 className="font-display text-5xl lg:text-7xl text-white">
             Our Legacy
           </h1>
           <p className="font-body text-xl text-white/80 mt-6 max-w-3xl mx-auto leading-relaxed">
@@ -51,7 +52,7 @@ export default function AboutPage() {
       <section className="max-w-7xl mx-auto px-6 lg:px-8 relative -mt-16 z-20 mb-24">
         <div className="bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden flex flex-col lg:flex-row">
           <div className="lg:w-1/2 p-10 lg:p-16 flex flex-col justify-center">
-            <h2 className="font-display uppercase text-3xl lg:text-4xl mb-6" style={{ color: "var(--maroon)" }}>
+            <h2 className="font-display text-3xl lg:text-4xl mb-6" style={{ color: "var(--maroon)" }}>
               A Tradition of Excellence
             </h2>
             <p className="font-body text-lg text-[#4a4038] leading-relaxed mb-6">
@@ -70,7 +71,7 @@ export default function AboutPage() {
               className="object-cover"
             />
             <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-md px-6 py-3 rounded-xl shadow-lg border border-white/50">
-              <p className="font-display uppercase text-xl" style={{ color: "var(--maroon)" }}>Since 1990</p>
+              <p className="font-display text-xl" style={{ color: "var(--maroon)" }}>Since 1990</p>
             </div>
           </div>
         </div>
@@ -97,7 +98,7 @@ export default function AboutPage() {
               <div className="inline-flex items-center gap-2 font-mono text-sm uppercase tracking-widest mb-4 font-bold" style={{ color: "var(--orange)" }}>
                 The Visionaries
               </div>
-              <h2 className="font-display uppercase text-4xl lg:text-5xl mb-8" style={{ color: "var(--maroon)" }}>
+              <h2 className="font-display text-4xl lg:text-5xl mb-8" style={{ color: "var(--maroon)" }}>
                 Family Owned, <br/> Professionally Run
               </h2>
               <blockquote className="border-l-4 pl-6 italic font-body text-2xl text-[#5c5245] mb-8 leading-relaxed" style={{ borderColor: "var(--yellow)" }}>
@@ -114,7 +115,7 @@ export default function AboutPage() {
       {/* 4. WORKSPACE & TEAM FACILITY */}
       <section className="py-24 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-display uppercase text-4xl lg:text-5xl mb-4" style={{ color: "var(--maroon)" }}>Our Facility & Team</h2>
+          <h2 className="font-display text-4xl lg:text-5xl mb-4" style={{ color: "var(--maroon)" }}>Our Facility & Team</h2>
           <p className="font-body text-lg text-[#5c5245] max-w-2xl mx-auto">
             Equipped with modern machinery and powered by a highly skilled workforce, our press floor is where ideas turn into reality.
           </p>
@@ -159,11 +160,14 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* GROUP COMPANY: YES PLUS */}
+      <YesPlusFeature compact />
+
       {/* 5. WE SERVE (INDUSTRIES WITH BACKGROUND IMAGES) */}
       <section className="py-24" style={{ background: "var(--maroon)" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="font-display uppercase text-4xl lg:text-5xl mb-4 text-white">We Serve</h2>
+            <h2 className="font-display text-4xl lg:text-5xl mb-4 text-white">We Serve</h2>
             <p className="font-body text-xl text-white/80 max-w-2xl mx-auto">
               The firm is fully equipped to provide a complete range of quality printing services to our esteemed customers across multiple sectors.
             </p>
@@ -200,7 +204,7 @@ export default function AboutPage() {
                   <div className="w-14 h-14 mx-auto rounded-full bg-white flex items-center justify-center mb-4 shadow-lg transform group-hover:scale-110 transition-transform duration-300">
                     <ind.icon size={26} style={{ color: "var(--maroon)" }} />
                   </div>
-                  <h3 className="font-display uppercase text-lg text-white mb-1 tracking-wide group-hover:text-[var(--yellow)] transition-colors duration-300">{ind.name}</h3>
+                  <h3 className="font-display text-lg text-white mb-1 tracking-wide group-hover:text-[var(--yellow)] transition-colors duration-300">{ind.name}</h3>
                   <p className="font-body text-xs text-white/90 uppercase tracking-wider">{ind.sub}</p>
                 </div>
               </div>
@@ -216,7 +220,7 @@ export default function AboutPage() {
             <div className="absolute top-0 right-0 p-8 opacity-5">
               <Lightbulb size={120} />
             </div>
-            <h2 className="text-3xl font-display uppercase mb-6" style={{ color: "var(--orange)" }}>Our Vision</h2>
+            <h2 className="text-3xl font-display mb-6" style={{ color: "var(--orange)" }}>Our Vision</h2>
             <p className="text-[#4a4038] font-body text-xl leading-relaxed italic relative z-10">
               "To be a leading and most trusted industrial and commercial printing partner, recognized for quality, innovation, and dependable service while continuously evolving with modern printing technologies."
             </p>
@@ -226,7 +230,7 @@ export default function AboutPage() {
             <div className="absolute top-0 right-0 p-8 opacity-10 text-white">
               <Target size={120} />
             </div>
-            <h2 className="text-3xl font-display uppercase mb-6 text-[var(--yellow)]">Our Mission</h2>
+            <h2 className="text-3xl font-display mb-6 text-[var(--yellow)]">Our Mission</h2>
             <ul className="space-y-4 text-white/90 font-body text-lg relative z-10">
               <li className="flex items-start gap-3"><RegMark size={16} className="mt-1 text-[var(--yellow)] shrink-0" /> Deliver premium-quality printing with precision.</li>
               <li className="flex items-start gap-3"><RegMark size={16} className="mt-1 text-[var(--yellow)] shrink-0" /> Provide fast, reliable, and cost-effective services.</li>
@@ -237,7 +241,7 @@ export default function AboutPage() {
         </div>
 
         <div className="text-center mb-12">
-          <h2 className="font-display uppercase text-4xl lg:text-5xl" style={{ color: "var(--maroon)" }}>Our Core Values</h2>
+          <h2 className="font-display text-4xl lg:text-5xl" style={{ color: "var(--maroon)" }}>Our Core Values</h2>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
@@ -253,7 +257,7 @@ export default function AboutPage() {
               <div className="w-12 h-12 mx-auto rounded-full mb-4 flex items-center justify-center" style={{ background: "#fdf1d6", color: "var(--orange)" }}>
                 <val.icon size={24} />
               </div>
-              <h3 className="font-display uppercase text-xl mb-2" style={{ color: "var(--maroon)" }}>{val.title}</h3>
+              <h3 className="font-display text-xl mb-2" style={{ color: "var(--maroon)" }}>{val.title}</h3>
               <p className="font-body text-[#5c5245]">{val.desc}</p>
             </div>
           ))}
@@ -264,7 +268,7 @@ export default function AboutPage() {
       <section className="py-24" style={{ background: "#fdf1d6" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="font-display uppercase text-4xl lg:text-5xl mb-4" style={{ color: "var(--maroon)" }}>Life at Chitra</h2>
+            <h2 className="font-display text-4xl lg:text-5xl mb-4" style={{ color: "var(--maroon)" }}>Life at Chitra</h2>
             <p className="font-body text-lg text-[#5c5245] max-w-2xl mx-auto">
               We believe a strong team is built beyond the press floor. Glimpses from our annual company retreats and team celebrations.
             </p>
@@ -291,7 +295,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           
           <div className="text-center mb-16">
-            <h2 className="font-display uppercase text-3xl lg:text-4xl mb-4" style={{ color: "var(--maroon)" }}>
+            <h2 className="font-display text-3xl lg:text-4xl mb-4" style={{ color: "var(--maroon)" }}>
               Our Esteemed Customers
             </h2>
             <p className="font-body text-lg font-medium text-[#c0392b] max-w-3xl mx-auto">

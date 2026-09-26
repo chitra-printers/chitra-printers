@@ -10,6 +10,7 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
   { name: "Services", href: "/services" },
+  { name: "Yes Plus", href: "/yes-plus" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -24,37 +25,37 @@ export default function Navbar() {
     >
       {/* Changed to w-full and increased padding to push logo to the extreme left */}
       <div className="w-full px-4 sm:px-8 lg:px-12">
-        <div className="flex justify-between items-center h-24 lg:h-28">
+        <div className="flex justify-between items-center h-20 lg:h-24">
           
           {/* Logo & Brand Name */}
           <div className="flex items-center">
-            <Link href="/" className="transition-transform duration-300 hover:scale-105 flex items-center gap-3 lg:gap-5">
+            <Link href="/" className="flex items-center gap-3 lg:gap-4 transition-opacity duration-300 hover:opacity-90">
               <Image
                 src="/assets/logo.png"
                 alt="Chitra Printers Logo"
                 width={180}
                 height={100}
                 priority
-                className="object-contain h-16 lg:h-20 w-auto"
+                className="object-contain h-14 lg:h-16 w-auto"
               />
-              {/* Brand Text added with white color */}
-              <span 
-                className="font-display uppercase font-black text-2xl lg:text-4xl tracking-tight hidden sm:block text-maroon" 
-              >
-                Chitra Printers
+              <span className="hidden sm:flex flex-col leading-none text-maroon">
+                <span className="font-display text-2xl lg:text-[2rem]">Chitra Printers</span>
+                <span className="font-body font-medium text-[0.65rem] lg:text-xs uppercase tracking-[0.25em] mt-1.5 opacity-75">
+                  Industrial &amp; Commercial Printing
+                </span>
               </span>
             </Link>
           </div>
 
           {/* Desktop Menu - Font size slightly reduced */}
-          <div className="hidden md:flex space-x-10 items-center ml-auto">
+          <div className="hidden md:flex space-x-8 lg:space-x-10 items-center ml-auto">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="relative font-body font-bold text-sm lg:text-base uppercase tracking-wider pb-1 transition-colors duration-300 group"
+                  className="relative font-body font-semibold text-sm uppercase tracking-[0.12em] pb-1 transition-colors duration-300 group"
                   style={{ color: "var(--maroon)", opacity: isActive ? 1 : 0.8 }}
                 >
                   <span className="inline-flex items-center gap-1.5">
@@ -98,7 +99,7 @@ export default function Navbar() {
       {/* Mobile Menu Dropdown */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
+          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
         style={{ background: "var(--maroon-dark)" }}
       >
