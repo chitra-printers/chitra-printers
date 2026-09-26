@@ -262,7 +262,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 7. CHITRA FAMILY TRIP GALLERY (6 Images) */}
+      {/* 7. LIFE AT CHITRA GALLERY */}
       <section className="py-24" style={{ background: "#fdf1d6" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -272,15 +272,19 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6">
-            {[1, 2, 3, 4, 5, 6].map((num) => (
-              <div key={num} className="relative aspect-square rounded-2xl overflow-hidden shadow-md group">
-                {/* PLACEHOLDER: Replace with actual trip images (trip_1.jpg to trip_6.jpg) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
+            {[
+              { src: "/assets/team_2.jpeg", alt: "Chitra team get-together" },
+              { src: "/assets/team_3.jpeg", alt: "Chitra team members together" },
+              { src: "/assets/team_4.jpeg", alt: "Chitra team outing" },
+            ].map((photo) => (
+              <div key={photo.src} className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md group">
                 <Image 
-                  src={`https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?q=80&w=600&auto=format&fit=crop&sig=${num}`} 
-                  alt={`Company Trip ${num}`} 
+                  src={photo.src} 
+                  alt={photo.alt} 
                   fill 
-                  className="object-cover group-hover:scale-110 transition-transform duration-500" 
+                  sizes="(min-width: 768px) 33vw, 90vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500" 
                 />
               </div>
             ))}
