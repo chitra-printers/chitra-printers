@@ -85,11 +85,11 @@ export default function AboutPage() {
             <div className="lg:col-span-5 relative">
               <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-white relative z-10">
                 <Image 
-                  src="/assets/owner.jpeg" 
+                  src="/assets/owner.jpg" 
                   alt="Owner of Chitra Printers at his desk"
                   fill
                   sizes="(min-width: 1024px) 480px, 90vw"
-                  className="object-cover object-[center_60%]"
+                  className="object-cover object-center"
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 w-48 h-48 rounded-full opacity-20 pointer-events-none" style={{ background: "var(--maroon)" }} />
@@ -140,9 +140,17 @@ export default function AboutPage() {
             </div>
           </div>
 
+          {/* Finishing */}
+          <div className="relative h-80 lg:h-[26rem] rounded-3xl overflow-hidden shadow-lg group">
+            <Image src="/assets/creasing.jpg" alt="Operator running the autofeed creasing machine" fill sizes="(min-width: 768px) 30vw, 90vw" className="object-cover object-[center_60%] group-hover:scale-105 transition-transform duration-700" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-8">
+              <h3 className="text-white font-display text-2xl tracking-wide">Precision Finishing</h3>
+            </div>
+          </div>
+
           {/* Staff Working 2 */}
-          <div className="md:col-span-3 relative h-80 lg:h-[26rem] rounded-3xl overflow-hidden shadow-lg group">
-            <Image src="/assets/team.jpeg" alt="The Chitra Printers team" fill sizes="(min-width: 768px) 90vw, 90vw" className="object-cover object-[center_40%] group-hover:scale-105 transition-transform duration-700" />
+          <div className="md:col-span-2 relative h-80 lg:h-[26rem] rounded-3xl overflow-hidden shadow-lg group">
+            <Image src="/assets/team.jpeg" alt="The Chitra Printers team" fill sizes="(min-width: 768px) 60vw, 90vw" className="object-cover object-[center_40%] group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-8">
               <h3 className="text-white font-display text-2xl tracking-wide">Dedicated Team</h3>
             </div>
@@ -273,6 +281,16 @@ export default function AboutPage() {
               { src: "/assets/team_4.jpeg", alt: "Chitra team outing", contain: true },
             ]}
           />
+
+          <div className="mt-4 lg:mt-6">
+            <PhotoGallery
+              columns={2}
+              photos={[
+                { src: "/assets/office_team.jpg", alt: "The Chitra Printers office team at their desks" },
+                { src: "/assets/office_desk.jpg", alt: "Chitra team member at the design desk beside the Docucolor press", contain: true },
+              ]}
+            />
+          </div>
         </div>
       </section>
 
