@@ -11,7 +11,7 @@ export type GalleryPhoto = {
 };
 
 // Photo grid (with an optional large featured photo above it) whose tiles open a full-size view on click
-export default function PhotoGallery({ photos: gridPhotos, featured }: { photos: GalleryPhoto[]; featured?: GalleryPhoto }) {
+export default function PhotoGallery({ photos: gridPhotos, featured, columns = 3 }: { photos: GalleryPhoto[]; featured?: GalleryPhoto; columns?: 2 | 3 }) {
   const photos = featured ? [featured, ...gridPhotos] : gridPhotos;
   const offset = featured ? 1 : 0;
   const [index, setIndex] = useState<number | null>(null);
@@ -54,7 +54,7 @@ export default function PhotoGallery({ photos: gridPhotos, featured }: { photos:
         </button>
       )}
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
+      <div className={`grid grid-cols-1 ${columns === 2 ? "md:grid-cols-2" : "md:grid-cols-3"} gap-4 lg:gap-6`}>
         {gridPhotos.map((photo, i) => (
           <button
             key={photo.src}
@@ -70,7 +70,7 @@ export default function PhotoGallery({ photos: gridPhotos, featured }: { photos:
               src={photo.src}
               alt={photo.alt}
               fill
-              sizes="(min-width: 768px) 33vw, 90vw"
+              sizes={columns === 2 ? "(min-width: 768px) 50vw, 90vw" : "(min-width: 768px) 33vw, 90vw"}
               className={`${photo.contain ? "object-contain" : "object-cover"} group-hover:scale-105 transition-transform duration-500`}
             />
             <span className="absolute inset-0 bg-[var(--maroon)]/0 group-hover:bg-[var(--maroon)]/35 transition-colors duration-300 flex items-center justify-center">
