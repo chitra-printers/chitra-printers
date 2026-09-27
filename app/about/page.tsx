@@ -66,7 +66,7 @@ export default function AboutPage() {
           <div className="lg:w-1/2 relative min-h-[400px]">
             <Image 
               src="/assets/tradition.jpg" 
-              alt="The original Chithra Printing & Binding Works shop front"
+              alt="The original Chitra Printers shop front, with its old 'Chithra Printing & Binding Works' sign"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover object-[65%_0%]"
@@ -285,7 +285,7 @@ export default function AboutPage() {
               Our Esteemed Customers
             </h2>
             <p className="font-body text-lg font-medium text-[#c0392b] max-w-3xl mx-auto">
-              We have more than 400 Valuable Customers but we are not in a position to display all their logos.
+              We are proud to serve more than 400 valued customers. Here are just a few of them.
             </p>
           </div>
 
