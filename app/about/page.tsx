@@ -156,6 +156,22 @@ export default function AboutPage() {
             </div>
           </div>
 
+          {/* Office */}
+          <div className="md:col-span-2 relative h-80 lg:h-[26rem] rounded-3xl overflow-hidden shadow-lg group">
+            <Image src="/assets/office_team.jpg" alt="The Chitra Printers office team at their desks" fill sizes="(min-width: 768px) 60vw, 90vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-8">
+              <h3 className="text-white font-display text-2xl tracking-wide">Our Office</h3>
+            </div>
+          </div>
+
+          {/* Design & prepress */}
+          <div className="relative h-80 lg:h-[26rem] rounded-3xl overflow-hidden shadow-lg group">
+            <Image src="/assets/office_desk.jpg" alt="Chitra team member at the design desk beside the Docucolor press" fill sizes="(min-width: 768px) 30vw, 90vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-8">
+              <h3 className="text-white font-display text-2xl tracking-wide">Design &amp; Prepress</h3>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -282,15 +298,6 @@ export default function AboutPage() {
             ]}
           />
 
-          <div className="mt-4 lg:mt-6">
-            <PhotoGallery
-              columns={2}
-              photos={[
-                { src: "/assets/office_team.jpg", alt: "The Chitra Printers office team at their desks" },
-                { src: "/assets/office_desk.jpg", alt: "Chitra team member at the design desk beside the Docucolor press", contain: true },
-              ]}
-            />
-          </div>
         </div>
       </section>
 
