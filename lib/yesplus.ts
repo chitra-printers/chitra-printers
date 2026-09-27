@@ -1,6 +1,6 @@
 // Yes Plus — cleaning products brand of Gurudev Enterprises,
 // a sister concern of Chitra Printers. Images are cut from
-// yesplus_cleaning_template.jpeg; swap in studio shots when available.
+// a product poster; swap in studio shots when available.
 
 export type YesPlusProduct = {
   name: string;

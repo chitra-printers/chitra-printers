@@ -7,9 +7,10 @@ import { YesPlusWordmark, GurudevLogo } from "@/components/YesPlusFeature";
 import { yesPlusProducts, yesPlusEnquiryUrl } from "@/lib/yesplus";
 
 export const metadata: Metadata = {
-  title: "Yes Plus Cleaning Products | Gurudev Enterprises · Chitra Printers",
+  title: { absolute: "Yes Plus Cleaning Products | Gurudev Enterprises · Chitra Printers" },
   description:
     "Yes Plus cleaning products by Gurudev Enterprises, a sister concern of Chitra Printers. Hand wash, dish wash, glass, tiles, toilet and car care, now in Pune.",
+  alternates: { canonical: "/yes-plus" },
 };
 
 export default function YesPlusPage() {

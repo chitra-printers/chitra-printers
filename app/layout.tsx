@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Preloader from "@/components/Preloader";
+import { siteUrl, siteName } from "@/lib/site";
 // Display face — classic high-contrast serif for an established, premium feel
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -26,9 +27,18 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Chitra Printers",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Chitra Printers | Commercial & Industrial Printing in Pune",
+    template: `%s | ${siteName}`,
+  },
   description:
-    "Your Trusted Printing Partner - Industrial & Commercial Printers",
+    "Your trusted printing partner in Pimpri, Pune since 1990. Visiting cards, letterheads, calendars, diaries, bill books, packaging and signage for businesses, schools and hospitals.",
+  openGraph: {
+    siteName,
+    locale: "en_IN",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
