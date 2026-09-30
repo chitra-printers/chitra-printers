@@ -165,6 +165,17 @@ export default function Footer() {
             Your Trusted Printing Partner
           </p>
         </div>
+        <p className="font-body text-[11px] tracking-wide text-white/30 text-center pb-4 px-6">
+          Entirely built by{" "}
+          <a
+            href="https://www.linkedin.com/in/rohitanish"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white/60 transition-colors"
+          >
+            Rohit Anish
+          </a>
+        </p>
       </div>
     </footer>
   );
